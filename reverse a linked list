@@ -48,3 +48,33 @@
       head->next=NULL;
       return rest_head;
     }
+    
+    // Recursive Solution Type 2;
+    
+    class Solution
+{
+    public:
+    //Function to reverse a linked list.
+    struct Node*tb(struct Node *cur,struct Node *prev)
+    {
+         if(cur==NULL)
+        {
+            return prev;
+        }
+        Node *next=cur->next;
+        cur->next=prev;
+        return(tb(next,cur));
+        
+        
+    }
+    struct Node* reverseList(struct Node *head)
+    {
+         Node *prev;
+         prev=NULL;
+         
+         tb(head,prev);
+       
+    }
+    
+    
+};
